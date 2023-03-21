@@ -3,3 +3,32 @@
 Javascript is a scripting language,where instuctions are written for runtime environment.
 Javascript is easy to implement, no compilation require directly execute the instruction,object oriented language.
 In javascript we can pass function as a value in variable.
+
+Variable decalartion:
+
+1. var a = 10;
+2. var a; 
+   a=10;
+ 
+Primitive data type:
+
+1. Number : in javascript number is double floating type number.
+2. Sting : A character is a sting of lenght 1, there is no character type in javascript
+3. Boolean : either true or false value.
+
+Javascript is a losely coupled language. it is not dependent on type in the below example we can see
+first we assign variable b number value then string so its working no error.
+
+var b =10;
+console.log(b);
+b = "hello b";
+console.log(b);
+
+Output:-
+10
+hello b
+
+
+
+
+
