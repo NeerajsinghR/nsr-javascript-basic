@@ -50,9 +50,19 @@ number
 
 Type Coercion: In javascript automatically type conversion happend.
 
+value of all type have associate boolean value
+Always use "===" for precise checks (both value and type)
+
 e.g. 123 + "4" (automatically convert 123 to string type("123") then concat with string "4"
    ouptut: 1234
 
+   var a = undefined;
+   if(a)
+   console.log("a is true");
+   else
+   console.log("a is false");
+
+   output: a is false
 
 eg: "===" Operator used to restrict automatically type conversion for two variable.
 
@@ -63,6 +73,73 @@ var b= 10;
 if(a==b)
 console.log("both value are equal ==");
 
-//strict not type conversion using === operator will return true if both have same type and same value
+//strict to not using type conversion using === operator will return true if both have same type and same value
 if(a===b)
 console.log("both value are equal ===");
+-------
+
+Objects: Objects not dependent on particular class. It behave like map key and value.
+
+Object literal notation to create object. e.g:- var obj = {};
+New property can be added on object directly. e.g. : obj.city = "indore";
+Object can have method also.
+
+var obj = {};
+console.log(obj);
+
+obj.name = "neeraj";
+obj.city = "indore";
+console.log(obj);
+
+output:
+{}
+{ name: 'neeraj', city: 'indore' }
+
+- Dot : it is faster than [] bracket notation. but there are some case where we need to use [] bracket notation
+
+
+[] Bracket Notations:- Uses of [] Notation
+
+property name is reserved word or invalid identifier
+property name start with number.
+
+var obj = {
+    "name" : "neeraj",
+    "city" : "indore",
+    "age"   : 20,
+      2    : "TWO"
+};
+
+var firstName = "name";
+console.log("properties not exits in obj",obj.firstName);
+console.log("accessing using [] bracket ",obj[firstName]);
+
+output: - 
+properties not exits in obj undefined
+accessing using [] bracket  neeraj
+
+var obj = {
+    "name" : "neeraj",
+    "city" : "indore",
+    "familydeatils" :  {
+        "father" : "aa"
+    }
+};
+obj.familydeatils.mother = "rr";
+console.log(obj.familydeatils["mother"]);
+
+delete : used to remove propery from object.
+
+delete obj.city;
+console.log(obj);
+
+{ name: 'neeraj',
+  familydeatils: { father: 'aa', mother: 'rr' }
+----------
+
+
+
+
+
+
+
