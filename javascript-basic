@@ -28,7 +28,21 @@ Output:-
 10
 hello b
 
+4.Undefined variable : which variable we decalared by default it's value set undefined
 
+var a; //undefined variable
 
+5. NUll : if we assign any null value in variable then we called as null variable. 
+--------
+
+"typeof" Operator: typeof used to find the type of vaiable or value.
+
+e.g.:
+console.log(typeof false);
+ boolean
+
+var a=10;
+console.log(typeof a);
+number
 
 
