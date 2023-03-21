@@ -1,0 +1,5 @@
+- What is JavaScript?
+
+Javascript is a scripting language,where instuctions are written for runtime environment.
+Javascript is easy to implement, no compilation require directly execute the instruction,object oriented language.
+In javascript we can pass function as a value in variable.
