@@ -160,6 +160,27 @@ String
 Number
 Boolean
 Symbol
+--------
+
+
+Function as argument:
+
+var h = function hi(name){
+    console.log("hi "+name);
+}
+
+function hiPrint(a, name){
+    a(name);
+    console.log("hiiii...");
+}
+
+hiPrint(h, "raj");
+
+output:-
+hi raj
+hiiii...
+
+
 
 
 
