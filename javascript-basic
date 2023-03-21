@@ -180,7 +180,23 @@ output:-
 hi raj
 hiiii...
 
+function on Object: pass function on object
 
+//function on Object
+var obj ={
+    a :20
+};
+
+obj.b= function(){
+    return 10;
+}
+
+console.log(obj.b());
+console.log(obj);
+
+output:-
+10
+{ a: 20, b: [Function] }
 
 
 
