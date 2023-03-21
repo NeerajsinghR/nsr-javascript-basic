@@ -35,7 +35,7 @@ var a; //undefined variable
 5. NUll : if we assign any null value in variable then we called as null variable. 
 --------
 
-"typeof" Operator: typeof used to find the type of vaiable or value.
+- "typeof" Operator: typeof used to find the type of vaiable or value.
 
 e.g.:
 console.log(typeof false);
@@ -44,5 +44,25 @@ console.log(typeof false);
 var a=10;
 console.log(typeof a);
 number
+-----
+
+- Type Coercion and "===" Operator
+
+Type Coercion: In javascript automatically type conversion happend.
+
+e.g. 123 + "4" (automatically convert 123 to string type("123") then concat with string "4"
+   ouptut: 1234
 
 
+eg: "===" Operator used to restrict automatically type conversion for two variable.
+
+var a= 10;
+var b= 10;
+
+//automatically type conversion
+if(a==b)
+console.log("both value are equal ==");
+
+//strict not type conversion using === operator will return true if both have same type and same value
+if(a===b)
+console.log("both value are equal ===");
