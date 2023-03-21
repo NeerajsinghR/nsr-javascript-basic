@@ -137,8 +137,29 @@ console.log(obj);
   familydeatils: { father: 'aa', mother: 'rr' }
 ----------
 
+- Arrays : array is similarly to 
 
+var language = ["c","c++","java","python"];
 
+console.log("language is",language)
+console.log("language is",language.length)
+
+language[4] = "js";
+console.log("length is",language)
+console.log("language is",language["4"])
+
+output:-
+language is [ 'c', 'c++', 'java', 'python' ]
+length is 4
+language is [ 'c', 'c++', 'java', 'python', 'js' ]
+language is js
+
+Wrapper object: In javacript there is some primitive type which is object also
+
+String
+Number
+Boolean
+Symbol
 
 
 
