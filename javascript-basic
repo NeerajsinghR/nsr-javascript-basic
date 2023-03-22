@@ -137,7 +137,7 @@ console.log(obj);
   familydeatils: { father: 'aa', mother: 'rr' }
 ----------
 
-- Arrays : array is similarly to 
+- Arrays : array is a object
 
 var language = ["c","c++","java","python"];
 
@@ -160,8 +160,41 @@ String
 Number
 Boolean
 Symbol
---------
+---
 
+Method of Array:-
+
+//splice method used where we need to reomove or delete element in array
+// language.splice(0,2,1,2);
+// language.splice(1,2)
+
+//slice method used to 
+// var sl = language.slice(2) //create new array from 2 index
+//create new array from index 2 to 4
+var sli = language.slice(2,4)
+console.log("language is",sli)
+
+//push for inseting new element in last postion and pop used for removing element.
+language.push("new");
+language.pop();
+console.log("language is",language)
+
+//shift() used to remove first index element in array.
+var first = language.shift();
+console.log("language is",first)
+//unshift() used to add element in first index in array.
+language.unshift("aa");
+
+In forEach method function passed as argument.
+
+// var language = ["c","c++","java","python",2,true,{}];
+// var print = function(lang){
+//     console.log("language is:- ",lang)
+// }
+// // forEach method 
+// language.forEach(print)
+
+--------
 
 Function as argument:
 
@@ -198,6 +231,59 @@ output:-
 10
 { a: 20, b: [Function] }
 
+this keyword: used where we don't depend on external function. we directly use this keyword for instance variable.
+
+e.g:-
+
+var person = {
+    "firstName" : "Neeraj",
+    "lastName" : "Rawat",
+    "getFullName" : function(){
+        return this.firstName + " " + this.lastName;
+    },
+    "address" :{
+        "street" : "1 abc nagar",
+        "city" : "Indore",
+        "state" : "MP"
+    },
+    "isFromState" :  function(st){
+       return (this.address.state===st)       
+    }
+};
+
+// var fullName = person.getFullName();
+// var person2 = person;
+// person = {};
+// console.log(person2.getFullName())
+
+var flag = person2.isFromState("MaP")
+console.log("state present:-",flag)
+
+// Default function argument: argument value is not an array but it's look like array.
+
+var add = function(){
+    var sum =0;    
+    for(var i= 0; i<arguments.length; i++)
+    sum+=arguments[i];
+    
+    return sum;
+}
+
+console.log(add(10,32,12,53,2));
+
+Math:
+
+const numbers = [65, 44, 12, 4];
+console.log(Math.max(...numbers))
+console.log(Math.min(...numbers))
 
 
+Date:-
 
+const birthday = new Date('August 19, 1975 23:15:30');
+const date1 = birthday.getMonth();
+console.log(date1);
+
+const event = new Date('August 19, 1975 23:15:30');
+event.setDate(24);
+console.log(event)
