@@ -48,18 +48,77 @@ to : This is the destination variable where the value from the from variable wil
         
         
  
-requestMapping
-This is the list of all the elements that are to be mapped for the request to hit. Detailed description of a mapping block is described later.
+requestMapping: This is the list of all the elements that are to be mapped for the request to hit. 
 
-responseMapping
-Similar to request, this is the response mapping that is required by the caller of the integrations framework.
+responseMapping: Similar to request, this is the response mapping that is required by the caller of the integrations framework.
 
 
 So the scope variable holds the following variables inside the object that is named the same as the _id of the mapping:
 
-request: This is the request in the json format that will be hit to the integration provider.
-nativeResponse: This is the response that we received from the integration provider.
-response: This is the response that the caller of the integrations framework requires.
+request:         This is the request in the json format that will be hit to the integration provider.
+nativeResponse:  This is the response that we received from the integration provider.
+response:        This is the response that the caller of the integrations framework requires.
 
-  
+--------
+
+Understand Mapping of at least two Insurers:-
+
+when we compare two insurer mapping so we are using diffrent mapping field for diffrent insurer.
+otherwise we do integration mapping in most cases similar as other insurer.
+
+In api configuration we are using different url for insurer
+
+SBI insurer:
+
+"apiConfiguration" : {
+        "apiType" : "REST_XML",
+        "headers" : {
+            "X-IBM-Client-Id" : "730dd08f1f329e9b9b34c1d807d1df5f",
+            "X-IBM-Client-Secret" : "10fb52beb72dafc0e3a19157e93b66a9",
+            "SOAPAction" : "http://tempuri.org/getPremium"
+        },
+        "payloadType" : "",
+        "url" : "https://uat-api.sbilife.co.in/sbilife/uat/getpremium-v1/get_Premium",
+        "methodName" : "getPremium",
+        "wsdlOptions" : {
+
+        }
+    }
+
+HDFC insurer: 
+
+ "apiConfiguration" : {
+        "apiType" : "SOAP_XML",
+        "payloadType" : "",
+        "url" : "https://soauat2.hdfclife.com/TEBT_QuoteGenerationWeb/sca/TEBT_QuoteGenerationWrapperWSExport/WEB-INF/wsdl/quotegenerationexternal/TEBT_QuoteGenerationWrapperWSExport_TEBT_QuoteGenerationWrapperInterfaceHttp_Service.wsdl",
+        "urlUAT" : "https://soauat2.hdfclife.com/TEBT_QuoteGenerationWeb/sca/TEBT_QuoteGenerationWrapperWSExport/WEB-INF/wsdl/quotegenerationexternal/TEBT_QuoteGenerationWrapperWSExport_TEBT_QuoteGenerationWrapperInterfaceHttp_Service.wsdl",
+        "methodName" : "generateQuoteForPos",
+        "wsdlOptions" : {
+
+        }
+    }
+
+Following are the elements of a particular apiConfiguration:
+
+apiType: This is the api type. It can take 4 values namely:
+REST_XML
+JSON
+SOAP_XML
+FORM_DATA
+MULTIPART_FORM_DATA (no need to set header in mapping )
+
+url: This is the http endpoint that we want to hit. It can be a string url which means a static url or it can be dynamic in which case we will 
+define the url in the format that Node's url module requires. Apart from the usual parameters of url, we can have dynamic query and path params. 
+These can be defined in the variables named queryParams and pathParams respectively. They will be a list of mappings similar to requestMapping.
+
+headers: These are for headers that are required for the api calls. They can be static as well as dynamic. For static just define the key value pair of the headers. For dynamic headers, again a mapping similar to request mapping will be created.
+wsdlOptions: WSDL options in case of SOAP request. Please refer this module. (option "TO":to change the endpoint if there are more than one end point in wsdl )
+methodName: The method name for the SOAP api.
+utilityMode:(boolean) use Integration framework in utility mode(will done mapping and return result: No API call)
+rawResponse: raw response enables the feature to get perticular response from specific field.if
+
+
+
+
+
 
