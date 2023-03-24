@@ -23,7 +23,7 @@ Scope object used to mapping the field
     }
  }
  
- Integration mapping:
+ Integration mapping: in these below mapping we are mapping dateOfBirth field.
  
 from : This variable is the source variable from which the value will be mapped to the to variable. 
 
@@ -31,7 +31,7 @@ to : This is the destination variable where the value from the from variable wil
         
         {
             "from" : "request.dateOfBirth",
-            "to" : "GenerateQuoteForPosInput.body.quotedtls.lifeassured.dob",
+            "to" : "lifeassured.dob",
             "defaultValue" : "",
             "rules" : [
                 {
@@ -55,8 +55,11 @@ responseMapping
 Similar to request, this is the response mapping that is required by the caller of the integrations framework.
 
 
+So the scope variable holds the following variables inside the object that is named the same as the _id of the mapping:
 
+request: This is the request in the json format that will be hit to the integration provider.
+nativeResponse: This is the response that we received from the integration provider.
+response: This is the response that the caller of the integrations framework requires.
 
   
-  
-    
+
