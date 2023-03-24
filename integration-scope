@@ -1,0 +1,62 @@
+Scope object used to mapping the field
+
+"scope": {
+    "request": {
+      "premium": "30000.0",
+      "currentDate": "12/07/2022",
+      "policyTerm": "10",
+      "premiumPaymentTerm": "5",
+      "premiumPaymentFrequency": "YEARLY",
+      "productCode": "Y24",
+      "optionCode": "1",
+      "productCodeOptionCode": "Y24_1",
+      "dateOfBirth": "10/07/1980",
+      "gender": "M",
+      "smoker": "N",
+      "age": "42",
+      "inputOption": "1",
+      "inputBonus": "8",
+      "tobaccoStatus": "N",
+      "isB2BCase": false,
+      "uid": "a9e2c11445975229aa6c7343e2050d8d__Y24__1",
+      "isEncrypted": false
+    }
+ }
+ 
+ Integration mapping:
+ 
+from : This variable is the source variable from which the value will be mapped to the to variable. 
+
+to : This is the destination variable where the value from the from variable will be mapped. After mapping the above request will look something like:
+        
+        {
+            "from" : "request.dateOfBirth",
+            "to" : "GenerateQuoteForPosInput.body.quotedtls.lifeassured.dob",
+            "defaultValue" : "",
+            "rules" : [
+                {
+                    "name" : "DATE",
+                    "value" : {
+                        "method" : "format",
+                        "srcFormat" : "DD-MM-YYYY",
+                        "destFormat" : "DD/MM/YYYY"
+                    }
+                }
+            ],
+            "datatype" : "String"
+        }
+        
+        
+ 
+requestMapping
+This is the list of all the elements that are to be mapped for the request to hit. Detailed description of a mapping block is described later.
+
+responseMapping
+Similar to request, this is the response mapping that is required by the caller of the integrations framework.
+
+
+
+
+  
+  
+    
